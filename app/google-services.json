@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214076564692",
+    "project_id": "myfirestore-dbdef",
+    "storage_bucket": "myfirestore-dbdef.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214076564692:android:5bf209101e2326af348741",
+        "android_client_info": {
+          "package_name": "com.kmf.myfirestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMtQZX_2UHNkTZAaVApWS3vEqvbMqZAT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
