@@ -72,12 +72,29 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 else {
-                    buatAkun(email, nama, password);
+                    cekEmailTerdaftar(email, nama, password);
                 }
             }
         });
     }
 
+    private void cekEmailTerdaftar(String email, String nama, String password) {
+        db.collection("users")
+                .whereEqualTo("email", email)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && !task.getResult().isEmpty()) {
+                        // Email sudah terdaftar
+                        Toast.makeText(RegisterActivity.this, "Email sudah digunakan!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Email belum terdaftar, buat akun baru
+                        buatAkun(email, nama, password);
+                    }
+                })
+                .addOnFailureListener(e ->
+                        Toast.makeText(RegisterActivity.this, "Terjadi kesalahan, coba lagi!", Toast.LENGTH_SHORT).show()
+                );
+    }
     private void buatAkun(String email, String nama, String password) {
         Map<String, Object> user = new HashMap<>();
         user.put("email", email);
